@@ -5,11 +5,15 @@ from __future__ import absolute_import
 from tapioca import (TapiocaAdapter, generate_wrapper_from_adapter, JSONAdapterMixin)
 from requests_oauthlib import OAuth2
 from resource_mapping import RESOURCE_MAPPING
+import re
+
 
 
 class BookingSyncClientAdapter(JSONAdapterMixin, TapiocaAdapter):
     api_root = 'https://www.bookingsync.com/api/v3/'
     resource_mapping = RESOURCE_MAPPING
+    re_links = re.compile(
+        r'(?i)(?:<(?P<link>(?:[\w\.\d\/\=:]*)(?:\?page=(?P<page>\d+)))>;\s*rel="(?P<rel>first|next|prev|last)")')
 
     def get_request_kwargs(self, api_params, *args, **kwargs):
         params = super(BookingSyncClientAdapter, self).get_request_kwargs(
@@ -23,10 +27,20 @@ class BookingSyncClientAdapter(JSONAdapterMixin, TapiocaAdapter):
         return params
 
     def get_iterator_list(self, response_data):
-        return response_data
+        items = []
+        assert isinstance(response_data, dict)
+        for k, v in response_data.iteritems():
+            if isinstance(v, list):
+                items.extend(v)
+        return items
 
     def get_iterator_next_request_kwargs(self, iterator_request_kwargs, response_data, response):
-        pass
+        links = [m.groupdict() for m in self.re_links.finditer(response.headers['link'])]
+        next_link = filter(lambda x: x.get('rel') == 'next', links)
+        if not next_link:
+            return
+        else:
+            return {'url': next_link[0]['link']}
 
 
 BookingSync = generate_wrapper_from_adapter(BookingSyncClientAdapter)
