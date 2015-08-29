@@ -26,10 +26,24 @@ class BookingSyncClientAdapter(JSONAdapterMixin, TapiocaAdapter):
 
         return params
 
+    def process_response(self, response):
+        obj = super(BookingSyncClientAdapter, self).process_response(response)
+        return obj
+
     def get_iterator_list(self, response_data):
+        # items = []
+        # assert isinstance(response_data, dict)
+        # for k, v in response_data.iteritems():
+        #     if isinstance(v, list):
+        #         items.extend(v)
+        # return items
+        return response_data
+
+    def response_to_native(self, response):
+        native = super(BookingSyncClientAdapter, self).response_to_native(response)
         items = []
-        assert isinstance(response_data, dict)
-        for k, v in response_data.iteritems():
+        assert isinstance(native, dict)
+        for k, v in native.iteritems():
             if isinstance(v, list):
                 items.extend(v)
         return items
