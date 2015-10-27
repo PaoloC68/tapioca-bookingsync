@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 from __future__ import absolute_import
 from tapioca import (TapiocaAdapter, generate_wrapper_from_adapter, JSONAdapterMixin)
 from requests_oauthlib import OAuth2
-from resource_mapping import RESOURCE_MAPPING
+from .resource_mapping import RESOURCE_MAPPING
 import re
 
 

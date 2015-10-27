@@ -13,7 +13,7 @@ RESOURCE_MAPPING = {
          ]
     },
     'search_rentals': {
-        'resource': '/rentals/search{params}',
+        'resource': '/rentals/search',
         'docs': 'http://developers.bookingsync.com/reference/endpoints/rentals/#search-rentals',
         "methods": [
             "GET",
