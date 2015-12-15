@@ -1,4 +1,6 @@
-# Tapioca bookingsync
+# Tapioca BookingSync
+
+This library allows Python developers to programmatically access https://www.bookingsync.com. Read more about [BookingSync API](http://developers.bookingsync.com/reference/)
 
 ## Installation
 ```
