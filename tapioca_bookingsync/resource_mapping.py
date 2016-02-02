@@ -43,4 +43,23 @@ RESOURCE_MAPPING = {
             "GET",
          ]
     },
+    'inquiry': {
+        'resource': 'inquiries/{id}',
+        "methods": [
+            "GET",
+            "PUT",
+            "DELETE"
+         ],
+        'docs': 'http://developers.bookingsync.com/reference/endpoints/inquiries/#get-a-single-inquiry'
+    },
+    'inquiries': {
+        'resource': 'inquiries',
+        'methods': ['GET'],
+        'docs': 'http://developers.bookingsync.com/reference/endpoints/inquiries/#list-inquiries'
+    },
+    'create_inquiry': {
+        'resource': '/rentals/{rental_id}/inquiries',
+        'methods': ['POST'],
+        'docs': 'http://developers.bookingsync.com/reference/endpoints/inquiries/#create-a-new-inquiry'
+    },
 }
