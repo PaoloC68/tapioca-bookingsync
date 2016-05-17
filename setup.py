@@ -20,7 +20,7 @@ except (IOError, ImportError):
 
 package = 'tapioca_bookingsync'
 requirements = [
-    'tapioca-wrapper==1.0',
+    'tapioca-wrapper==1.1',
 
     'requests-oauthlib==0.4.2',
 
