@@ -4,6 +4,20 @@ from __future__ import unicode_literals
 from __future__ import absolute_import
 
 RESOURCE_MAPPING = {
+    'accounts': {
+        'resource': 'accounts',
+        'docs': 'http://developers.bookingsync.com/reference/endpoints/accounts/#list-accounts',
+        "methods": [
+            "GET",
+        ]
+    },
+    'account': {
+        'resource': 'accounts/{account_id}',
+        'docs': 'http://developers.bookingsync.com/reference/endpoints/accounts/#get-a-single-account',
+        "methods": [
+            "GET",
+        ]
+    },
     'rentals': {
         'resource': 'rentals',
         'docs': 'http://developers.bookingsync.com/reference/endpoints/rentals/#list-rentals',
