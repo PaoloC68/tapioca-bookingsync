@@ -8,8 +8,8 @@ from .resource_mapping import RESOURCE_MAPPING
 import re
 
 
-
 class BookingSyncClientAdapter(JSONAdapterMixin, TapiocaAdapter):
+    
     api_root = 'https://www.bookingsync.com/api/v3/'
     resource_mapping = RESOURCE_MAPPING
     re_links = re.compile(
