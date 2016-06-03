@@ -18,6 +18,20 @@ RESOURCE_MAPPING = {
             "GET",
         ]
     },
+    'clients': {
+        'resource': 'clients',
+        'docs': 'http://developers.bookingsync.com/reference/endpoints/clients/#list-clients',
+        "methods": [
+            "GET",
+        ]
+    },
+    'client': {
+        'resource': 'clients/{client_id}',
+        'docs': 'http://developers.bookingsync.com/reference/endpoints/clients/#get-a-single-client',
+        "methods": [
+            "GET",
+        ]
+    },
     'rentals': {
         'resource': 'rentals',
         'docs': 'http://developers.bookingsync.com/reference/endpoints/rentals/#list-rentals',
