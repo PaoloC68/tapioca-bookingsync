@@ -90,4 +90,14 @@ RESOURCE_MAPPING = {
         'methods': ['POST'],
         'docs': 'http://developers.bookingsync.com/reference/endpoints/inquiries/#create-a-new-inquiry'
     },
+    'bookings_tags': {
+        'resource': 'bookings_tags/',
+        'methods': ['GET'],
+        'docs': None
+    },
+    'bookings_tag': {
+        'resource': 'bookings_tags/{bookings_tag_id}',
+        'methods': ['GET'],
+        'docs': None
+    },
 }
