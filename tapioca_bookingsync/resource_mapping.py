@@ -4,6 +4,34 @@ from __future__ import unicode_literals
 from __future__ import absolute_import
 
 RESOURCE_MAPPING = {
+    'accounts': {
+        'resource': 'accounts',
+        'docs': 'http://developers.bookingsync.com/reference/endpoints/accounts/#list-accounts',
+        "methods": [
+            "GET",
+        ]
+    },
+    'account': {
+        'resource': 'accounts/{account_id}',
+        'docs': 'http://developers.bookingsync.com/reference/endpoints/accounts/#get-a-single-account',
+        "methods": [
+            "GET",
+        ]
+    },
+    'clients': {
+        'resource': 'clients',
+        'docs': 'http://developers.bookingsync.com/reference/endpoints/clients/#list-clients',
+        "methods": [
+            "GET",
+        ]
+    },
+    'client': {
+        'resource': 'clients/{client_id}',
+        'docs': 'http://developers.bookingsync.com/reference/endpoints/clients/#get-a-single-client',
+        "methods": [
+            "GET",
+        ]
+    },
     'rentals': {
         'resource': 'rentals',
         'docs': 'http://developers.bookingsync.com/reference/endpoints/rentals/#list-rentals',
@@ -61,5 +89,15 @@ RESOURCE_MAPPING = {
         'resource': '/rentals/{rental_id}/inquiries',
         'methods': ['POST'],
         'docs': 'http://developers.bookingsync.com/reference/endpoints/inquiries/#create-a-new-inquiry'
+    },
+    'bookings_tags': {
+        'resource': 'bookings_tags/',
+        'methods': ['GET'],
+        'docs': None
+    },
+    'bookings_tag': {
+        'resource': 'bookings_tags/{bookings_tag_id}',
+        'methods': ['GET'],
+        'docs': None
     },
 }
