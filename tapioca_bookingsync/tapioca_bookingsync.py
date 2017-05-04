@@ -5,15 +5,12 @@ from __future__ import absolute_import
 from tapioca import (TapiocaAdapter, generate_wrapper_from_adapter, JSONAdapterMixin)
 from requests_oauthlib import OAuth2
 from .resource_mapping import RESOURCE_MAPPING
-import re
 
 
 class BookingSyncClientAdapter(JSONAdapterMixin, TapiocaAdapter):
-    
+
     api_root = 'https://www.bookingsync.com/api/v3/'
     resource_mapping = RESOURCE_MAPPING
-    re_links = re.compile(
-        r'(?i)(?:<(?P<link>(?:[\w\.\d\/\=:]*)(?:\?page=(?P<page>\d+)))>;\s*rel="(?P<rel>first|next|prev|last)")')
 
     def get_request_kwargs(self, api_params, *args, **kwargs):
         params = super(BookingSyncClientAdapter, self).get_request_kwargs(
