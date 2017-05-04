@@ -49,12 +49,11 @@ class BookingSyncClientAdapter(JSONAdapterMixin, TapiocaAdapter):
         return items
 
     def get_iterator_next_request_kwargs(self, iterator_request_kwargs, response_data, response):
-        links = [m.groupdict() for m in self.re_links.finditer(response.headers['link'])]
-        next_link = filter(lambda x: x.get('rel') == 'next', links)
-        if not next_link:
-            return
-        else:
-            return {'url': next_link[0]['link']}
+        next_link = response.links.get('next')
+        if next_link and 'url' in next_link.keys():
+            return {'url': next_link['url']}
+
+
 
 
 BookingSync = generate_wrapper_from_adapter(BookingSyncClientAdapter)
