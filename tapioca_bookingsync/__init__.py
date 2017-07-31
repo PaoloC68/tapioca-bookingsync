@@ -6,7 +6,7 @@ from __future__ import absolute_import
 
 __author__ = 'Paolo Calvi'
 __email__ = 'paolo.cesare.calvi@gmail.com'
-__version__ = '0.1'
+__version__ = '0.1.1'
 
 
 from .tapioca_bookingsync import BookingSync
