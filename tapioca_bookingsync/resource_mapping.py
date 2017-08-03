@@ -1,11 +1,6 @@
-# -*- coding: utf-8 -*-
-
-from __future__ import unicode_literals
-from __future__ import absolute_import
-
 RESOURCE_MAPPING = {
     'accounts': {
-        'resource': 'accounts',
+        'resource': 'accounts/',
         'docs': 'http://developers.bookingsync.com/reference/endpoints/accounts/#list-accounts',
         "methods": [
             "GET",
@@ -19,7 +14,7 @@ RESOURCE_MAPPING = {
         ]
     },
     'clients': {
-        'resource': 'clients',
+        'resource': 'clients/',
         'docs': 'http://developers.bookingsync.com/reference/endpoints/clients/#list-clients',
         "methods": [
             "GET",
@@ -33,7 +28,7 @@ RESOURCE_MAPPING = {
         ]
     },
     'rentals': {
-        'resource': 'rentals',
+        'resource': 'rentals/',
         'docs': 'http://developers.bookingsync.com/reference/endpoints/rentals/#list-rentals',
         "methods": [
             "GET",
@@ -41,7 +36,7 @@ RESOURCE_MAPPING = {
          ]
     },
     'search_rentals': {
-        'resource': '/rentals/search',
+        'resource': 'rentals/search/',
         'docs': 'http://developers.bookingsync.com/reference/endpoints/rentals/#search-rentals',
         "methods": [
             "GET",
@@ -57,19 +52,20 @@ RESOURCE_MAPPING = {
          ]
     },
     'bookings': {
-        'resource': 'bookings.json',
+        'resource': 'bookings/',
         'docs': 'http://developers.bookingsync.com/reference/endpoints/bookings/#list-bookings',
         "methods": [
             "GET",
          ]
     },
-    'search_bookings': {
-        'resource':
-            'bookings.json',
-        'docs': 'http://developers.bookingsync.com/reference/endpoints/bookings/#search-bookings',
+    'booking': {
+        'resource': 'bookings/{booking_id}',
+        'docs': 'http://developers.bookingsync.com/reference/endpoints/bookings/#list-bookings',
         "methods": [
             "GET",
-         ]
+            "PUT",
+            "DELETE"
+        ]
     },
     'inquiry': {
         'resource': 'inquiries/{id}',
@@ -81,12 +77,12 @@ RESOURCE_MAPPING = {
         'docs': 'http://developers.bookingsync.com/reference/endpoints/inquiries/#get-a-single-inquiry'
     },
     'inquiries': {
-        'resource': 'inquiries',
+        'resource': 'inquiries/',
         'methods': ['GET'],
         'docs': 'http://developers.bookingsync.com/reference/endpoints/inquiries/#list-inquiries'
     },
     'create_inquiry': {
-        'resource': '/rentals/{rental_id}/inquiries',
+        'resource': 'rentals/{rental_id}/inquiries',
         'methods': ['POST'],
         'docs': 'http://developers.bookingsync.com/reference/endpoints/inquiries/#create-a-new-inquiry'
     },
