@@ -96,4 +96,12 @@ RESOURCE_MAPPING = {
         'methods': ['GET'],
         'docs': None
     },
+    'amenities': {
+        'resource': 'amenities/',
+        'docs': 'http://developers.bookingsync.com/reference/endpoints/amenities/',
+        "methods": [
+            "GET",
+            "POST"
+         ]
+    },
 }
