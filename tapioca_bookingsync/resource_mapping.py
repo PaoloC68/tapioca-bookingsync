@@ -104,4 +104,14 @@ RESOURCE_MAPPING = {
             'POST'
          ]
     },
+    'rates': {
+        'resource': 'rates/',
+        'methods': ['GET'],
+        'docs': None
+    },
+    'rate': {
+        'resource': 'rates/{rate_id}',
+        'methods': ['GET'],
+        'docs': None
+    },
 }
