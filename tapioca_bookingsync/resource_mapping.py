@@ -114,4 +114,14 @@ RESOURCE_MAPPING = {
         'methods': ['GET'],
         'docs': None
     },
+    'rates_tables': {
+        'resource': 'rates_tables/',
+        'methods': ['GET', 'POST'],
+        'docs': None
+    },
+    'rate_table': {
+        'resource': 'rates_tables/{rate_table_id}',
+        'methods': ['GET', 'PUT', 'DELETE'],
+        'docs': None
+    },
 }
