@@ -24,6 +24,7 @@ requirements = [
     'requests-oauthlib>=0.4.2',
 ]
 test_requirements = [
+    'pytest-cov',
 ]
 
 
@@ -90,7 +91,9 @@ setup(
         'Programming Language :: Python :: 3.2',
         'Programming Language :: Python :: 3.3',
         'Programming Language :: Python :: 3.4',
+        'Programming Language :: Python :: 3.6',
     ],
+    setup_requires=['pytest-runner'],
     test_suite='tests',
     tests_require=test_requirements
 )
