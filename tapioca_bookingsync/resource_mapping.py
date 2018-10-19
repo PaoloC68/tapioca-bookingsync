@@ -13,6 +13,20 @@ RESOURCE_MAPPING = {
             'GET',
         ]
     },
+    'availabilities': {
+        'resource': 'availabilities/',
+        'docs': 'http://developers.bookingsync.com/reference/endpoints/availabilities/#list-availabilities',
+        'methods': [
+            'GET',
+        ]
+    },
+    'availability': {
+        'resource': 'availabilities/{availability_id}/',
+        'docs': 'http://developers.bookingsync.com/reference/endpoints/availabilities/#get-a-single-availability',
+        'methods': [
+            'GET',
+        ]
+    },
     'clients': {
         'resource': 'clients/',
         'docs': 'http://developers.bookingsync.com/reference/endpoints/clients/#list-clients',
