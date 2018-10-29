@@ -65,6 +65,14 @@ RESOURCE_MAPPING = {
             'DELETE'
          ]
     },
+    'rental_photos': {
+        'resource': 'rentals/{rental_id}/photos/',
+        'docs': 'http://developers.bookingsync.com/reference/endpoints/photos/#create-a-new-photo',
+        'methods': [
+            'GET',
+            'POST',
+         ]
+    },
     'bookings': {
         'resource': 'bookings/',
         'docs': 'http://developers.bookingsync.com/reference/endpoints/bookings/#list-bookings',
