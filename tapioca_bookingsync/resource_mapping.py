@@ -69,7 +69,6 @@ RESOURCE_MAPPING = {
         'resource': 'rentals/{rental_id}/photos/',
         'docs': 'http://developers.bookingsync.com/reference/endpoints/photos/#create-a-new-photo',
         'methods': [
-            'GET',
             'POST',
          ]
     },
