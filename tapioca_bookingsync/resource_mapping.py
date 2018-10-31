@@ -73,6 +73,22 @@ RESOURCE_MAPPING = {
             'POST',
          ]
     },
+    'photos': {
+        'resource': 'photos/',
+        'docs': 'http://developers.bookingsync.com/reference/endpoints/photos/#list-photos',
+        'methods': [
+            'GET',
+         ]
+    },
+    'photo': {
+        'resource': 'photos/{photo_id}/',
+        'docs': '#get-a-single-photo',
+        'methods': [
+            'GET',
+            'PUT',
+            'DELETE',
+         ]
+    },
     'bookings': {
         'resource': 'bookings/',
         'docs': 'http://developers.bookingsync.com/reference/endpoints/bookings/#list-bookings',
