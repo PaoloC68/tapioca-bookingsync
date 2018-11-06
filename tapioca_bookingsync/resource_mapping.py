@@ -32,6 +32,7 @@ RESOURCE_MAPPING = {
         'docs': 'http://developers.bookingsync.com/reference/endpoints/clients/#list-clients',
         'methods': [
             'GET',
+            'POST',
         ]
     },
     'client': {
@@ -103,6 +104,13 @@ RESOURCE_MAPPING = {
             'PUT',
             'DELETE'
         ]
+    },
+    'create_booking': {
+        'resource': 'rentals/{rental_id}/bookings/',
+        'docs': 'http://developers.bookingsync.com/reference/endpoints/bookings/#create-a-new-booking',
+        'methods': [
+            'POST',
+         ]
     },
     'inquiry': {
         'resource': 'inquiries/{id}',
