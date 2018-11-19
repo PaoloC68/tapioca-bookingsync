@@ -22,6 +22,9 @@ class BookingSyncClientAdapter(JSONAdapterMixin, TapiocaAdapter):
     def response_to_native(self, response):
         native = super(BookingSyncClientAdapter, self).response_to_native(response)
         items = []
+        if native is None:
+            return items
+
         assert isinstance(native, dict)
         for k, v in native.items():
             if isinstance(v, list):
