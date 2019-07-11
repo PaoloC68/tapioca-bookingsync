@@ -112,6 +112,13 @@ RESOURCE_MAPPING = {
             'POST',
          ]
     },
+    'search_bookings': {
+        'resource': 'bookings/',
+        'docs': 'http://developers.bookingsync.com/reference/endpoints/bookings/#search-bookings',
+        "methods": [
+            "GET",
+         ]
+    },
     'inquiry': {
         'resource': 'inquiries/{id}',
         'methods': [
