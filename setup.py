@@ -1,6 +1,4 @@
 #!/usr/bin/env python
-# -*- coding: utf-8 -*-
-
 
 try:
     from setuptools import setup
@@ -19,13 +17,12 @@ except (IOError, ImportError):
 
 
 package = 'tapioca_bookingsync'
-requirements = [
-    'tapioca-wrapper<2',
-    'requests-oauthlib>=0.4.2',
-]
-test_requirements = [
-    'pytest-cov',
-]
+
+with open('requirements/production.txt') as requirements_file:
+    requires = [item for item in requirements_file]
+
+with open('requirements.txt') as requirements_file:
+    test_requirements = [item for item in requirements_file]
 
 
 def get_version(package):
@@ -92,6 +89,7 @@ setup(
         'Programming Language :: Python :: 3.3',
         'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 3.7',
     ],
     setup_requires=['pytest-runner'],
     test_suite='tests',
