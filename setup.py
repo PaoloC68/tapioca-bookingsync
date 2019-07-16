@@ -21,7 +21,7 @@ package = 'tapioca_bookingsync'
 with open('requirements/production.txt') as requirements_file:
     requires = [item for item in requirements_file]
 
-with open('requirements.txt') as requirements_file:
+with open('requirements/tests.txt') as requirements_file:
     test_requirements = [item for item in requirements_file]
 
 
@@ -72,7 +72,7 @@ setup(
     ],
     package_dir={'tapioca_bookingsync': 'tapioca_bookingsync'},
     include_package_data=True,
-    install_requires=requirements,
+    install_requires=requires,
     license="MIT",
     zip_safe=False,
     keywords='bookingsync',
