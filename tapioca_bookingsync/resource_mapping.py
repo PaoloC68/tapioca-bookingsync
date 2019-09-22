@@ -1,71 +1,119 @@
-# -*- coding: utf-8 -*-
-
-from __future__ import unicode_literals
-from __future__ import absolute_import
-
 RESOURCE_MAPPING = {
     'accounts': {
-        'resource': 'accounts',
+        'resource': 'accounts/',
         'docs': 'http://developers.bookingsync.com/reference/endpoints/accounts/#list-accounts',
-        "methods": [
-            "GET",
+        'methods': [
+            'GET',
         ]
     },
     'account': {
         'resource': 'accounts/{account_id}',
         'docs': 'http://developers.bookingsync.com/reference/endpoints/accounts/#get-a-single-account',
-        "methods": [
-            "GET",
+        'methods': [
+            'GET',
+        ]
+    },
+    'availabilities': {
+        'resource': 'availabilities/',
+        'docs': 'http://developers.bookingsync.com/reference/endpoints/availabilities/#list-availabilities',
+        'methods': [
+            'GET',
+        ]
+    },
+    'availability': {
+        'resource': 'availabilities/{availability_id}/',
+        'docs': 'http://developers.bookingsync.com/reference/endpoints/availabilities/#get-a-single-availability',
+        'methods': [
+            'GET',
         ]
     },
     'clients': {
-        'resource': 'clients',
+        'resource': 'clients/',
         'docs': 'http://developers.bookingsync.com/reference/endpoints/clients/#list-clients',
-        "methods": [
-            "GET",
+        'methods': [
+            'GET',
+            'POST',
         ]
     },
     'client': {
         'resource': 'clients/{client_id}',
         'docs': 'http://developers.bookingsync.com/reference/endpoints/clients/#get-a-single-client',
-        "methods": [
-            "GET",
+        'methods': [
+            'GET',
         ]
     },
     'rentals': {
-        'resource': 'rentals',
+        'resource': 'rentals/',
         'docs': 'http://developers.bookingsync.com/reference/endpoints/rentals/#list-rentals',
-        "methods": [
-            "GET",
-            "POST"
+        'methods': [
+            'GET',
+            'POST'
          ]
     },
     'search_rentals': {
-        'resource': '/rentals/search',
+        'resource': 'rentals/search/',
         'docs': 'http://developers.bookingsync.com/reference/endpoints/rentals/#search-rentals',
-        "methods": [
-            "GET",
+        'methods': [
+            'GET',
          ]
     },
-    "rental": {
-        "resource": "rentals/{rental_id}",
-        'docs': "http://developers.bookingsync.com/reference/endpoints/rentals/#get-a-single-rental",
-        "methods": [
-            "GET",
-            "PUT",
-            "DELETE"
+    'rental': {
+        'resource': 'rentals/{rental_id}',
+        'docs': 'http://developers.bookingsync.com/reference/endpoints/rentals/#get-a-single-rental',
+        'methods': [
+            'GET',
+            'PUT',
+            'DELETE'
+         ]
+    },
+    'rental_photos': {
+        'resource': 'rentals/{rental_id}/photos/',
+        'docs': 'http://developers.bookingsync.com/reference/endpoints/photos/#create-a-new-photo',
+        'methods': [
+            'POST',
+         ]
+    },
+    'photos': {
+        'resource': 'photos/',
+        'docs': 'http://developers.bookingsync.com/reference/endpoints/photos/#list-photos',
+        'methods': [
+            'GET',
+         ]
+    },
+    'photo': {
+        'resource': 'photos/{photo_id}/',
+        'docs': '#get-a-single-photo',
+        'methods': [
+            'GET',
+            'PUT',
+            'DELETE',
          ]
     },
     'bookings': {
-        'resource': 'bookings.json',
+        'resource': 'bookings/',
         'docs': 'http://developers.bookingsync.com/reference/endpoints/bookings/#list-bookings',
-        "methods": [
-            "GET",
+        'methods': [
+            'GET',
+         ]
+    },
+    'booking': {
+        'resource': 'bookings/{booking_id}',
+        'docs': 'http://developers.bookingsync.com/reference/endpoints/bookings/#list-bookings',
+        'methods': [
+            'GET',
+            'PUT',
+            'DELETE'
+        ]
+    },
+    'create_booking': {
+        'resource': 'rentals/{rental_id}/bookings/',
+        'docs': 'http://developers.bookingsync.com/reference/endpoints/bookings/#create-a-new-booking',
+        'methods': [
+            'POST',
          ]
     },
     'search_bookings': {
-        'resource':
-            'bookings.json',
+        'resource': 'bookings/',
         'docs': 'http://developers.bookingsync.com/reference/endpoints/bookings/#search-bookings',
         "methods": [
             "GET",
@@ -73,20 +121,20 @@ RESOURCE_MAPPING = {
     },
     'inquiry': {
         'resource': 'inquiries/{id}',
-        "methods": [
-            "GET",
-            "PUT",
-            "DELETE"
+        'methods': [
+            'GET',
+            'PUT',
+            'DELETE'
          ],
         'docs': 'http://developers.bookingsync.com/reference/endpoints/inquiries/#get-a-single-inquiry'
     },
     'inquiries': {
-        'resource': 'inquiries',
+        'resource': 'inquiries/',
         'methods': ['GET'],
         'docs': 'http://developers.bookingsync.com/reference/endpoints/inquiries/#list-inquiries'
     },
     'create_inquiry': {
-        'resource': '/rentals/{rental_id}/inquiries',
+        'resource': 'rentals/{rental_id}/inquiries',
         'methods': ['POST'],
         'docs': 'http://developers.bookingsync.com/reference/endpoints/inquiries/#create-a-new-inquiry'
     },
@@ -98,6 +146,34 @@ RESOURCE_MAPPING = {
     'bookings_tag': {
         'resource': 'bookings_tags/{bookings_tag_id}',
         'methods': ['GET'],
+        'docs': None
+    },
+    'amenities': {
+        'resource': 'amenities/',
+        'docs': 'http://developers.bookingsync.com/reference/endpoints/amenities/',
+        'methods': [
+            'GET',
+            'POST'
+         ]
+    },
+    'rates': {
+        'resource': 'rates/',
+        'methods': ['GET'],
+        'docs': None
+    },
+    'rate': {
+        'resource': 'rates/{rate_id}',
+        'methods': ['GET'],
+        'docs': None
+    },
+    'rates_tables': {
+        'resource': 'rates_tables/',
+        'methods': ['GET', 'POST'],
+        'docs': None
+    },
+    'rate_table': {
+        'resource': 'rates_tables/{rate_table_id}',
+        'methods': ['GET', 'PUT', 'DELETE'],
         'docs': None
     },
 }

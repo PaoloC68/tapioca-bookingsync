@@ -1,6 +1,4 @@
 #!/usr/bin/env python
-# -*- coding: utf-8 -*-
-
 
 try:
     from setuptools import setup
@@ -19,15 +17,13 @@ except (IOError, ImportError):
 
 
 package = 'tapioca_bookingsync'
-requirements = [
-    'tapioca-wrapper==1.1',
 
-    'requests-oauthlib==0.4.2',
+with open('requirements/production.txt') as requirements_file:
+    requires = [item for item in requirements_file]
 
-]
-test_requirements = [
+with open('requirements/tests.txt') as requirements_file:
+    test_requirements = [item for item in requirements_file]
 
-]
 
 def get_version(package):
     """
@@ -57,9 +53,9 @@ def get_email(package):
 if sys.argv[-1] == 'publish':
     os.system("python setup.py sdist upload")
     args = {'version': get_version(package)}
-    print "You probably want to also tag the version now:"
-    print "  git tag -a %(version)s -m 'version %(version)s'" % args
-    print "  git push --tags"
+    print("You probably want to also tag the version now:")
+    print("  git tag -a %(version)s -m 'version %(version)s'" % args)
+    print("  git push --tags")
     sys.exit()
 
 
@@ -76,7 +72,7 @@ setup(
     ],
     package_dir={'tapioca_bookingsync': 'tapioca_bookingsync'},
     include_package_data=True,
-    install_requires=requirements,
+    install_requires=requires,
     license="MIT",
     zip_safe=False,
     keywords='bookingsync',
@@ -92,7 +88,10 @@ setup(
         'Programming Language :: Python :: 3.2',
         'Programming Language :: Python :: 3.3',
         'Programming Language :: Python :: 3.4',
+        'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 3.7',
     ],
+    setup_requires=['pytest-runner'],
     test_suite='tests',
     tests_require=test_requirements
 )
