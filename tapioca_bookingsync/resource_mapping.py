@@ -176,4 +176,9 @@ RESOURCE_MAPPING = {
         'methods': ['GET', 'PUT', 'DELETE'],
         'docs': None
     },
+    'sources': {
+        'resource': 'sources/',
+        'methods': ['GET', 'POST'],
+        'docs': 'http://developers.bookingsync.com/reference/endpoints/sources/',
+    },
 }
